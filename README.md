@@ -1,7 +1,7 @@
 # RGD
 Readable Graph Description
 
-A simple, readble, flexible graph data format.
+A simple, readable, flexible graph data format.
 
 
 ## Features

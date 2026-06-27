@@ -22,7 +22,6 @@ complex relationships.
 
 
 ## Example
-See the examples directory for more.
 
 ```rgd
 # graph

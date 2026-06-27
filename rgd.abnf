@@ -17,7 +17,9 @@
 
 ;; Document Structure
 
-rgd = headerless-doc / 1*(graph-doc)
+rgd = empty-doc / headerless-doc / 1*(graph-doc)
+
+empty-doc = *(comment-line / blank-line)
 
 graph-doc = graph-doc-header newline
             *(graph-line)
@@ -27,8 +29,9 @@ graph-doc = graph-doc-header newline
 headerless-doc = [node-doc-header newline]
                  node-doc-body
 
-node-doc-body = *(node-line)
+node-doc-body = node-expression newline *(node-line)
                 [edge-doc-body / unterminated-node-line]
+                / unterminated-node-line
 
 edge-doc-body = (edge-doc-header / legacy-edge-doc-header) newline
                 *(edge-line)

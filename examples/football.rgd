@@ -1,0 +1,736 @@
+// M. Girvan and M. E. J. Newman,
+// Community structure in social and biological networks,
+// Proc. Natl. Acad. Sci. USA 99, 7821-7826 (2002)
+//
+// Converted from GML found at: http://www-personal.umich.edu/~mejn/netdata/football.zip
+# nodes
+BrighamYoung: value = 7
+FloridaState: value = 0
+Iowa: value = 2
+KansasState: value = 3
+NewMexico: value = 7
+TexasTech: value = 3
+PennState: value = 2
+SouthernCalifornia: value = 8
+ArizonaState: value = 8
+SanDiegoState: value = 7
+Baylor: value = 3
+NorthTexas: value = 10
+NorthernIllinois: value = 6
+Northwestern: value = 2
+WesternMichigan: value = 6
+Wisconsin: value = 2
+Wyoming: value = 7
+Auburn: value = 9
+Akron: value = 6
+VirginiaTech: value = 1
+Alabama: value = 9
+UCLA: value = 8
+Arizona: value = 8
+Utah: value = 7
+ArkansasState: value = 10
+NorthCarolinaState: value = 0
+BallState: value = 6
+Florida: value = 9
+BoiseState: value = 11
+BostonCollege: value = 1
+WestVirginia: value = 1
+BowlingGreenState: value = 6
+Michigan: value = 2
+Virginia: value = 0
+Buffalo: value = 6
+Syracuse: value = 1
+CentralFlorida: value = 5
+GeorgiaTech: value = 0
+CentralMichigan: value = 6
+Purdue: value = 2
+Colorado: value = 3
+ColoradoState: value = 7
+Connecticut: value = 5
+EasternMichigan: value = 6
+EastCarolina: value = 4
+Duke: value = 0
+FresnoState: value = 11
+OhioState: value = 2
+Houston: value = 4
+Rice: value = 11
+Idaho: value = 10
+Washington: value = 8
+Kansas: value = 3
+SouthernMethodist: value = 11
+Kent: value = 6
+Pittsburgh: value = 1
+Kentucky: value = 9
+Louisville: value = 4
+LouisianaTech: value = 11
+LouisianaMonroe: value = 10
+Minnesota: value = 2
+MiamiOhio: value = 6
+Vanderbilt: value = 9
+MiddleTennesseeState: value = 10
+Illinois: value = 2
+MississippiState: value = 9
+Memphis: value = 4
+Nevada: value = 11
+Oregon: value = 8
+NewMexicoState: value = 10
+SouthCarolina: value = 9
+Ohio: value = 6
+IowaState: value = 3
+SanJoseState: value = 11
+Nebraska: value = 3
+SouthernMississippi: value = 4
+Tennessee: value = 9
+Stanford: value = 8
+WashingtonState: value = 8
+Temple: value = 1
+Navy: value = 5
+"TexasA&M": value = 3
+NotreDame: value = 5
+TexasElPaso: value = 11
+Oklahoma: value = 3
+Toledo: value = 6
+Tulane: value = 4
+Mississippi: value = 9
+Tulsa: value = 11
+NorthCarolina: value = 0
+UtahState: value = 5
+Army: value = 4
+Cincinnati: value = 4
+AirForce: value = 7
+Rutgers: value = 1
+Georgia: value = 9
+LouisianaState: value = 9
+LouisianaLafayette: value = 10
+Texas: value = 3
+Marshall: value = 6
+MichiganState: value = 2
+MiamiFlorida: value = 1
+Missouri: value = 3
+Clemson: value = 0
+NevadaLasVegas: value = 7
+WakeForest: value = 0
+Indiana: value = 2
+OklahomaState: value = 3
+OregonState: value = 8
+Maryland: value = 0
+TexasChristian: value = 4
+California: value = 8
+AlabamaBirmingham: value = 4
+Arkansas: value = 9
+Hawaii: value = 11
+
+# edges
+BrighamYoung -- FloridaState
+BrighamYoung -- NewMexico
+BrighamYoung -- SanDiegoState
+BrighamYoung -- Wyoming
+BrighamYoung -- Utah
+BrighamYoung -- Virginia
+BrighamYoung -- Syracuse
+BrighamYoung -- ColoradoState
+BrighamYoung -- MississippiState
+BrighamYoung -- UtahState
+BrighamYoung -- AirForce
+BrighamYoung -- NevadaLasVegas
+FloridaState -- NorthCarolinaState
+FloridaState -- Florida
+FloridaState -- Virginia
+FloridaState -- GeorgiaTech
+FloridaState -- Duke
+FloridaState -- Louisville
+FloridaState -- NorthCarolina
+FloridaState -- MiamiFlorida
+FloridaState -- Clemson
+FloridaState -- WakeForest
+FloridaState -- Maryland
+Iowa -- KansasState
+Iowa -- PennState
+Iowa -- Northwestern
+Iowa -- WesternMichigan
+Iowa -- Wisconsin
+Iowa -- OhioState
+Iowa -- Minnesota
+Iowa -- Illinois
+Iowa -- IowaState
+Iowa -- Nebraska
+Iowa -- MichiganState
+Iowa -- Indiana
+KansasState -- TexasTech
+KansasState -- NorthTexas
+KansasState -- BallState
+KansasState -- Colorado
+KansasState -- Kansas
+KansasState -- LouisianaTech
+KansasState -- IowaState
+KansasState -- Nebraska
+KansasState -- "TexasA&M"
+KansasState -- Oklahoma
+KansasState -- Missouri
+NewMexico -- TexasTech
+NewMexico -- SanDiegoState
+NewMexico -- Wyoming
+NewMexico -- Utah
+NewMexico -- BoiseState
+NewMexico -- ColoradoState
+NewMexico -- NewMexicoState
+NewMexico -- AirForce
+NewMexico -- NevadaLasVegas
+NewMexico -- OregonState
+TexasTech -- Baylor
+TexasTech -- NorthTexas
+TexasTech -- Kansas
+TexasTech -- Nebraska
+TexasTech -- "TexasA&M"
+TexasTech -- Oklahoma
+TexasTech -- UtahState
+TexasTech -- LouisianaLafayette
+TexasTech -- Texas
+TexasTech -- OklahomaState
+PennState -- SouthernCalifornia
+PennState -- Michigan
+PennState -- Purdue
+PennState -- OhioState
+PennState -- Pittsburgh
+PennState -- LouisianaTech
+PennState -- Minnesota
+PennState -- Illinois
+PennState -- Toledo
+PennState -- MichiganState
+PennState -- Indiana
+SouthernCalifornia -- ArizonaState
+SouthernCalifornia -- UCLA
+SouthernCalifornia -- Arizona
+SouthernCalifornia -- Colorado
+SouthernCalifornia -- Oregon
+SouthernCalifornia -- SanJoseState
+SouthernCalifornia -- Stanford
+SouthernCalifornia -- WashingtonState
+SouthernCalifornia -- NotreDame
+SouthernCalifornia -- OregonState
+SouthernCalifornia -- California
+ArizonaState -- SanDiegoState
+ArizonaState -- UCLA
+ArizonaState -- Arizona
+ArizonaState -- ColoradoState
+ArizonaState -- Washington
+ArizonaState -- Oregon
+ArizonaState -- Stanford
+ArizonaState -- WashingtonState
+ArizonaState -- UtahState
+ArizonaState -- California
+SanDiegoState -- Wyoming
+SanDiegoState -- Arizona
+SanDiegoState -- Utah
+SanDiegoState -- ColoradoState
+SanDiegoState -- Illinois
+SanDiegoState -- AirForce
+SanDiegoState -- NevadaLasVegas
+SanDiegoState -- OregonState
+Baylor -- NorthTexas
+Baylor -- Minnesota
+Baylor -- IowaState
+Baylor -- Nebraska
+Baylor -- "TexasA&M"
+Baylor -- Oklahoma
+Baylor -- Texas
+Baylor -- Missouri
+Baylor -- OklahomaState
+NorthTexas -- ArkansasState
+NorthTexas -- BoiseState
+NorthTexas -- Idaho
+NorthTexas -- NewMexicoState
+NorthTexas -- UtahState
+NorthTexas -- LouisianaLafayette
+NorthTexas -- NevadaLasVegas
+NorthernIllinois -- Northwestern
+NorthernIllinois -- WesternMichigan
+NorthernIllinois -- Auburn
+NorthernIllinois -- Akron
+NorthernIllinois -- BallState
+NorthernIllinois -- Buffalo
+NorthernIllinois -- CentralFlorida
+NorthernIllinois -- CentralMichigan
+NorthernIllinois -- EasternMichigan
+NorthernIllinois -- Toledo
+Northwestern -- Wisconsin
+Northwestern -- Michigan
+Northwestern -- Purdue
+Northwestern -- Duke
+Northwestern -- Minnesota
+Northwestern -- Illinois
+Northwestern -- MichiganState
+Northwestern -- Indiana
+Northwestern -- TexasChristian
+WesternMichigan -- Wisconsin
+WesternMichigan -- BallState
+WesternMichigan -- CentralMichigan
+WesternMichigan -- EasternMichigan
+WesternMichigan -- Kent
+WesternMichigan -- Ohio
+WesternMichigan -- Toledo
+WesternMichigan -- Marshall
+Wisconsin -- Michigan
+Wisconsin -- Purdue
+Wisconsin -- OhioState
+Wisconsin -- Minnesota
+Wisconsin -- Oregon
+Wisconsin -- Cincinnati
+Wisconsin -- MichiganState
+Wisconsin -- Indiana
+Wisconsin -- Hawaii
+Wyoming -- Auburn
+Wyoming -- Utah
+Wyoming -- CentralMichigan
+Wyoming -- ColoradoState
+Wyoming -- Nevada
+Wyoming -- "TexasA&M"
+Wyoming -- AirForce
+Wyoming -- NevadaLasVegas
+Auburn -- Alabama
+Auburn -- Florida
+Auburn -- LouisianaTech
+Auburn -- Vanderbilt
+Auburn -- MississippiState
+Auburn -- Mississippi
+Auburn -- Georgia
+Auburn -- LouisianaState
+Auburn -- Arkansas
+Akron -- VirginiaTech
+Akron -- BowlingGreenState
+Akron -- Buffalo
+Akron -- CentralFlorida
+Akron -- CentralMichigan
+Akron -- Connecticut
+Akron -- Kent
+Akron -- MiamiOhio
+Akron -- Ohio
+Akron -- Marshall
+VirginiaTech -- BostonCollege
+VirginiaTech -- WestVirginia
+VirginiaTech -- Virginia
+VirginiaTech -- Syracuse
+VirginiaTech -- CentralFlorida
+VirginiaTech -- EastCarolina
+VirginiaTech -- Pittsburgh
+VirginiaTech -- Temple
+VirginiaTech -- Rutgers
+VirginiaTech -- MiamiFlorida
+Alabama -- UCLA
+Alabama -- CentralFlorida
+Alabama -- Vanderbilt
+Alabama -- MississippiState
+Alabama -- SouthCarolina
+Alabama -- SouthernMississippi
+Alabama -- Tennessee
+Alabama -- Mississippi
+Alabama -- LouisianaState
+Alabama -- Arkansas
+UCLA -- Arizona
+UCLA -- Michigan
+UCLA -- FresnoState
+UCLA -- Washington
+UCLA -- Oregon
+UCLA -- Stanford
+UCLA -- OregonState
+UCLA -- California
+Arizona -- Utah
+Arizona -- OhioState
+Arizona -- Washington
+Arizona -- Oregon
+Arizona -- Stanford
+Arizona -- WashingtonState
+Arizona -- OregonState
+Utah -- ColoradoState
+Utah -- WashingtonState
+Utah -- UtahState
+Utah -- AirForce
+Utah -- NevadaLasVegas
+Utah -- California
+ArkansasState -- NorthCarolinaState
+ArkansasState -- BoiseState
+ArkansasState -- Idaho
+ArkansasState -- Memphis
+ArkansasState -- NewMexicoState
+ArkansasState -- Oklahoma
+ArkansasState -- Mississippi
+ArkansasState -- UtahState
+ArkansasState -- TexasChristian
+NorthCarolinaState -- Virginia
+NorthCarolinaState -- GeorgiaTech
+NorthCarolinaState -- Duke
+NorthCarolinaState -- SouthernMethodist
+NorthCarolinaState -- NorthCarolina
+NorthCarolinaState -- Clemson
+NorthCarolinaState -- WakeForest
+NorthCarolinaState -- Indiana
+NorthCarolinaState -- Maryland
+BallState -- Florida
+BallState -- Buffalo
+BallState -- CentralMichigan
+BallState -- Connecticut
+BallState -- EasternMichigan
+BallState -- MiamiOhio
+BallState -- Toledo
+Florida -- Kentucky
+Florida -- Vanderbilt
+Florida -- MiddleTennesseeState
+Florida -- MississippiState
+Florida -- SouthCarolina
+Florida -- Tennessee
+Florida -- Georgia
+Florida -- LouisianaState
+BoiseState -- CentralMichigan
+BoiseState -- Idaho
+BoiseState -- NewMexicoState
+BoiseState -- WashingtonState
+BoiseState -- UtahState
+BoiseState -- Arkansas
+BostonCollege -- WestVirginia
+BostonCollege -- Syracuse
+BostonCollege -- Connecticut
+BostonCollege -- Pittsburgh
+BostonCollege -- Temple
+BostonCollege -- Navy
+BostonCollege -- NotreDame
+BostonCollege -- Army
+BostonCollege -- Rutgers
+BostonCollege -- MiamiFlorida
+WestVirginia -- Syracuse
+WestVirginia -- EastCarolina
+WestVirginia -- Idaho
+WestVirginia -- Pittsburgh
+WestVirginia -- Temple
+WestVirginia -- NotreDame
+WestVirginia -- Rutgers
+WestVirginia -- MiamiFlorida
+WestVirginia -- Maryland
+BowlingGreenState -- Michigan
+BowlingGreenState -- Buffalo
+BowlingGreenState -- EasternMichigan
+BowlingGreenState -- Kent
+BowlingGreenState -- Pittsburgh
+BowlingGreenState -- MiamiOhio
+BowlingGreenState -- Ohio
+BowlingGreenState -- Temple
+BowlingGreenState -- Toledo
+BowlingGreenState -- Marshall
+Michigan -- Purdue
+Michigan -- OhioState
+Michigan -- Rice
+Michigan -- Illinois
+Michigan -- MichiganState
+Michigan -- Indiana
+Virginia -- GeorgiaTech
+Virginia -- Duke
+Virginia -- NorthCarolina
+Virginia -- Clemson
+Virginia -- WakeForest
+Virginia -- Maryland
+Buffalo -- Syracuse
+Buffalo -- Connecticut
+Buffalo -- Kent
+Buffalo -- MiamiOhio
+Buffalo -- Ohio
+Buffalo -- Rutgers
+Buffalo -- Marshall
+Syracuse -- EastCarolina
+Syracuse -- Pittsburgh
+Syracuse -- Temple
+Syracuse -- Cincinnati
+Syracuse -- Rutgers
+Syracuse -- MiamiFlorida
+CentralFlorida -- GeorgiaTech
+CentralFlorida -- EasternMichigan
+CentralFlorida -- LouisianaTech
+CentralFlorida -- LouisianaMonroe
+GeorgiaTech -- Duke
+GeorgiaTech -- Navy
+GeorgiaTech -- NorthCarolina
+GeorgiaTech -- Georgia
+GeorgiaTech -- Clemson
+GeorgiaTech -- WakeForest
+GeorgiaTech -- Maryland
+CentralMichigan -- Purdue
+CentralMichigan -- EasternMichigan
+CentralMichigan -- Kent
+CentralMichigan -- Ohio
+CentralMichigan -- Toledo
+Purdue -- OhioState
+Purdue -- Kent
+Purdue -- Minnesota
+Purdue -- NotreDame
+Purdue -- MichiganState
+Purdue -- Indiana
+Colorado -- ColoradoState
+Colorado -- Washington
+Colorado -- Kansas
+Colorado -- IowaState
+Colorado -- Nebraska
+Colorado -- "TexasA&M"
+Colorado -- Texas
+Colorado -- Missouri
+Colorado -- OklahomaState
+ColoradoState -- Nevada
+ColoradoState -- AirForce
+ColoradoState -- NevadaLasVegas
+Connecticut -- EasternMichigan
+Connecticut -- Louisville
+Connecticut -- MiddleTennesseeState
+EasternMichigan -- MiamiOhio
+EasternMichigan -- SouthCarolina
+EasternMichigan -- Temple
+EasternMichigan -- Toledo
+EastCarolina -- Duke
+EastCarolina -- Houston
+EastCarolina -- Louisville
+EastCarolina -- Memphis
+EastCarolina -- SouthernMississippi
+EastCarolina -- Tulane
+EastCarolina -- Army
+EastCarolina -- AlabamaBirmingham
+Duke -- Vanderbilt
+Duke -- NorthCarolina
+Duke -- Clemson
+Duke -- WakeForest
+Duke -- Maryland
+FresnoState -- OhioState
+FresnoState -- Rice
+FresnoState -- SouthernMethodist
+FresnoState -- Nevada
+FresnoState -- SanJoseState
+FresnoState -- TexasElPaso
+FresnoState -- Tulsa
+FresnoState -- TexasChristian
+FresnoState -- California
+FresnoState -- Hawaii
+OhioState -- Minnesota
+OhioState -- MiamiOhio
+OhioState -- Illinois
+OhioState -- MichiganState
+Houston -- Rice
+Houston -- SouthernMethodist
+Houston -- Louisville
+Houston -- Memphis
+Houston -- SouthernMississippi
+Houston -- Tulane
+Houston -- Army
+Houston -- Cincinnati
+Houston -- LouisianaState
+Houston -- Texas
+Rice -- SouthernMethodist
+Rice -- Nevada
+Rice -- SanJoseState
+Rice -- TexasElPaso
+Rice -- Oklahoma
+Rice -- Tulsa
+Rice -- TexasChristian
+Rice -- Hawaii
+Idaho -- Washington
+Idaho -- Oregon
+Idaho -- NewMexicoState
+Idaho -- WashingtonState
+Idaho -- UtahState
+Washington -- Oregon
+Washington -- Stanford
+Washington -- WashingtonState
+Washington -- MiamiFlorida
+Washington -- OregonState
+Washington -- California
+Kansas -- SouthernMethodist
+Kansas -- IowaState
+Kansas -- Nebraska
+Kansas -- Oklahoma
+Kansas -- Texas
+Kansas -- Missouri
+Kansas -- AlabamaBirmingham
+SouthernMethodist -- Nevada
+SouthernMethodist -- SanJoseState
+SouthernMethodist -- TexasElPaso
+SouthernMethodist -- Tulane
+SouthernMethodist -- Tulsa
+SouthernMethodist -- TexasChristian
+SouthernMethodist -- Hawaii
+Kent -- Pittsburgh
+Kent -- MiamiOhio
+Kent -- Ohio
+Kent -- Marshall
+Pittsburgh -- Temple
+Pittsburgh -- NorthCarolina
+Pittsburgh -- Rutgers
+Pittsburgh -- MiamiFlorida
+Kentucky -- Louisville
+Kentucky -- Vanderbilt
+Kentucky -- MississippiState
+Kentucky -- SouthCarolina
+Kentucky -- Tennessee
+Kentucky -- Mississippi
+Kentucky -- Georgia
+Kentucky -- LouisianaState
+Kentucky -- Indiana
+Louisville -- SouthernMississippi
+Louisville -- Tulane
+Louisville -- Army
+Louisville -- Cincinnati
+Louisville -- AlabamaBirmingham
+LouisianaTech -- LouisianaMonroe
+LouisianaTech -- MiddleTennesseeState
+LouisianaTech -- Tulsa
+LouisianaTech -- LouisianaLafayette
+LouisianaTech -- MiamiFlorida
+LouisianaTech -- Hawaii
+LouisianaMonroe -- Minnesota
+LouisianaMonroe -- MiddleTennesseeState
+LouisianaMonroe -- Memphis
+LouisianaMonroe -- Tennessee
+LouisianaMonroe -- LouisianaLafayette
+LouisianaMonroe -- Arkansas
+Minnesota -- Illinois
+Minnesota -- Ohio
+Minnesota -- Indiana
+MiamiOhio -- Vanderbilt
+MiamiOhio -- Ohio
+MiamiOhio -- Cincinnati
+MiamiOhio -- Marshall
+Vanderbilt -- SouthCarolina
+Vanderbilt -- Tennessee
+Vanderbilt -- Mississippi
+Vanderbilt -- Georgia
+Vanderbilt -- WakeForest
+MiddleTennesseeState -- Illinois
+MiddleTennesseeState -- MississippiState
+MiddleTennesseeState -- LouisianaLafayette
+MiddleTennesseeState -- Maryland
+MiddleTennesseeState -- AlabamaBirmingham
+Illinois -- MichiganState
+Illinois -- Indiana
+Illinois -- California
+MississippiState -- Memphis
+MississippiState -- SouthCarolina
+MississippiState -- Mississippi
+MississippiState -- LouisianaState
+MississippiState -- Arkansas
+Memphis -- SouthernMississippi
+Memphis -- Tennessee
+Memphis -- Tulane
+Memphis -- Army
+Memphis -- Cincinnati
+Memphis -- AlabamaBirmingham
+Nevada -- Oregon
+Nevada -- SanJoseState
+Nevada -- TexasElPaso
+Nevada -- Tulsa
+Nevada -- NevadaLasVegas
+Nevada -- TexasChristian
+Nevada -- Hawaii
+Oregon -- WashingtonState
+Oregon -- OregonState
+Oregon -- California
+NewMexicoState -- SouthCarolina
+NewMexicoState -- TexasElPaso
+NewMexicoState -- Tulsa
+NewMexicoState -- UtahState
+NewMexicoState -- Army
+NewMexicoState -- Georgia
+SouthCarolina -- Tennessee
+SouthCarolina -- Georgia
+SouthCarolina -- Clemson
+SouthCarolina -- Arkansas
+Ohio -- IowaState
+Ohio -- Marshall
+IowaState -- Nebraska
+IowaState -- "TexasA&M"
+IowaState -- Missouri
+IowaState -- NevadaLasVegas
+IowaState -- OklahomaState
+SanJoseState -- Nebraska
+SanJoseState -- Stanford
+SanJoseState -- TexasElPaso
+SanJoseState -- Tulsa
+SanJoseState -- TexasChristian
+SanJoseState -- Hawaii
+Nebraska -- NotreDame
+Nebraska -- Oklahoma
+Nebraska -- Missouri
+SouthernMississippi -- Tennessee
+SouthernMississippi -- Tulane
+SouthernMississippi -- Cincinnati
+SouthernMississippi -- OklahomaState
+SouthernMississippi -- AlabamaBirmingham
+Tennessee -- Georgia
+Tennessee -- LouisianaState
+Tennessee -- Arkansas
+Stanford -- WashingtonState
+Stanford -- NotreDame
+Stanford -- Texas
+Stanford -- OregonState
+Stanford -- California
+WashingtonState -- OregonState
+WashingtonState -- California
+Temple -- Navy
+Temple -- Rutgers
+Temple -- MiamiFlorida
+Temple -- Maryland
+Navy -- NotreDame
+Navy -- Toledo
+Navy -- Tulane
+Navy -- Army
+Navy -- AirForce
+Navy -- Rutgers
+Navy -- WakeForest
+Navy -- TexasChristian
+"TexasA&M" -- NotreDame
+"TexasA&M" -- TexasElPaso
+"TexasA&M" -- Oklahoma
+"TexasA&M" -- Texas
+"TexasA&M" -- OklahomaState
+NotreDame -- AirForce
+NotreDame -- Rutgers
+NotreDame -- MichiganState
+TexasElPaso -- Oklahoma
+TexasElPaso -- Tulsa
+TexasElPaso -- TexasChristian
+TexasElPaso -- Hawaii
+Oklahoma -- Texas
+Oklahoma -- OklahomaState
+Toledo -- Marshall
+Tulane -- Mississippi
+Tulane -- Army
+Tulane -- Cincinnati
+Tulane -- LouisianaLafayette
+Mississippi -- Georgia
+Mississippi -- LouisianaState
+Mississippi -- NevadaLasVegas
+Mississippi -- Arkansas
+Tulsa -- NorthCarolina
+Tulsa -- OklahomaState
+Tulsa -- TexasChristian
+Tulsa -- Hawaii
+NorthCarolina -- Marshall
+NorthCarolina -- Clemson
+NorthCarolina -- WakeForest
+NorthCarolina -- Maryland
+Army -- Cincinnati
+Army -- AirForce
+Army -- AlabamaBirmingham
+Cincinnati -- Indiana
+Cincinnati -- AlabamaBirmingham
+AirForce -- NevadaLasVegas
+Rutgers -- MiamiFlorida
+Georgia -- Arkansas
+LouisianaState -- AlabamaBirmingham
+LouisianaState -- Arkansas
+LouisianaLafayette -- Texas
+LouisianaLafayette -- AlabamaBirmingham
+Texas -- Missouri
+Texas -- OklahomaState
+Marshall -- MichiganState
+MichiganState -- Missouri
+Missouri -- Clemson
+Missouri -- OklahomaState
+Clemson -- WakeForest
+Clemson -- Maryland
+NevadaLasVegas -- Hawaii
+WakeForest -- Maryland
+OregonState -- California
+TexasChristian -- Hawaii

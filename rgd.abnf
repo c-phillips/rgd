@@ -42,9 +42,9 @@ edge-doc-body = (edge-doc-header / legacy-edge-doc-header) newline
 unterminated-node-line = node-expression / ws comment / rws
 unterminated-edge-line = edge-expression / ws comment / rws
 
-graph-line = graph-expression newline / comment-line / blank-line
-node-line  = node-expression newline  / comment-line / blank-line
-edge-line  = edge-expression newline  / comment-line / blank-line
+graph-line = graph-expression ws [comment] newline / comment-line / blank-line
+node-line  = node-expression  ws [comment] newline / comment-line / blank-line
+edge-line  = edge-expression  ws [comment] newline / comment-line / blank-line
 
 graph-doc-header = ws section-marker ws %x67.72.61.70.68 ws ; # graph
 node-doc-header  = ws section-marker ws %x6e.6f.64.65.73 ws ; # nodes

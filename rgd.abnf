@@ -129,8 +129,10 @@ key-rest  = ALPHA / DIGIT / %x2D / %x5F / %x2E
 quoted-key = basic-string / literal-string
 keyval-sep = ws %x3D ws ; =
 
-pure-val = string / boolean / array / date-time / float / integer
+pure-val = string / boolean / array / date-time / float / integer / null
 val = metadata / pure-val / metadata-block
+
+null = %x6e.75.6c.6c ; null
 
 ;; Key Sets
 

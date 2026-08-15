@@ -192,10 +192,10 @@ Key sets have section-dependent meaning:
 
 ## Values
 Values are meant to be simple to understand by reading them.
-A value cannot be a nested key-value list.
 
 ### String
-There are two ways to express strings: basic, and literal.
+There are four ways to express strings: basic, literal, and their multiline
+equivalents.
 All strings must contain only Unicode characters.
 
 **Basic strings** are surrounded by quotation marks (`"`). Any Unicode character
@@ -235,6 +235,22 @@ bytes and strings.
 
 All other escape sequences not listed above are reserved; if they are used, RGD
 should produce an error.
+
+**Literal Strings** are surrounded by single quotation marks (`'`) and work like
+basic strings except they don't escape.
+
+**Multiline Strings** both basic and literal strings can be multilined by using
+triple quotes. 
+The first newline is ignored.
+
+```rgd
+A: long_description = """
+    This is a very long description
+    """
+```
+This should produce a node `A` with the `long_description` attribute containing
+the value `"This is a very long description\n"`.
+
 
 ### Integer
 
@@ -472,6 +488,30 @@ string_array = [ "all", 'strings', "are the same", 'type' ]
 // Mixed-type arrays are allowed
 numbers = [ 0.1, 0.2, 0.5, 1, 2, 5 ]
 contributors = ["Foo Bar <foo@example.com>", 1e-10, true]
+
+// Multiline arrays are allowed
+multiline_nested = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+```
+
+### Object / Metadata Blocks
+
+There are many use cases where nested key-value mappings are useful to have.
+Keeping in mind that most use-cases only need single line key-value
+descriptions, it is possible for both readability and complex modeling to use
+multiline description blocks with nested key-value blocks.
+
+```rgd
+Alice: {
+    name = {
+        first = "Alice",
+        last  = "Zelky"
+    },
+    birthday = 1990-10-10
+}
 ```
 
 ## Graph
@@ -522,6 +562,61 @@ INVALID:
 
 // This is disallowed because A has already had `label` assigned!
 A: label = "individual"
+```
+
+### Node References
+
+In some applications, the RGD may have multiple graphs and nodes with large
+definitions.
+To avoid duplication, it is possible to reference previously defined nodes in
+later graphs.
+You can do this with the reference token `&` followed by a valid node key,
+key-set, or the special wildcard `*` which will pull **all** nodes in.
+
+```rgd
+# graph
+# nodes
+A = { very = 1, long = 2, description = 3, } // imagine this being super long
+B = { very = 1, long = 2, description = 3, } // imagine this being super long
+C = { very = 1, long = 2, description = 3, } // imagine this being super long
+# edges
+A -> B
+// ...
+
+# graph
+# nodes
+&A  // import the definition of A from before
+D = { very = 1, long = 2, description = 3, } // you can still add new nodes
+# edges
+D -> A
+
+# graph
+# nodes
+&{A, B, C}: instance = 3 // import like a set, and bulk assign a new attribute
+# edges
+A -> C
+C -> B
+
+# graph
+# nodes
+&*  // import ALL node definitions {A, B, C, D}
+# edges
+D -> C
+
+```
+
+If you add new attributes to the referenced definitions, they must be unique.
+You cannot overwrite previously defined attribute values.
+
+```rgd
+# graph
+# nodes
+{A, B, C}: type = "person"
+
+# graph
+# nodes
+&A: type = "animal" // INCORRECT! 
+
 ```
 
 ### Legacy Nodes
@@ -583,6 +678,39 @@ Therefore, `A -- B` and `B -- A` identify the same edge.
 Two bidirectional edges are identical if they contain the same unordered pair of
 endpoints.
 Therefore, `A <> B` and `B <> A` identify the same edge.
+
+### Multi-Edges
+
+In some contexts, it is useful to define an edge between the same endpoints
+multiple times.
+Graphs which support unique edge redefinitions are called multigraphs.
+Because RGD typically enforces edge uniqueness, you must explicitly define edge
+multiplicity for each multi-edge.
+This is done by inserting an edge identity marker after the second endpoint node
+and before the description token.
+
+```rgd
+{A,B,C}
+# edges
+A -> B: description = "..."
+C -> A &1: description = "..."
+C -> A &2: another_entry = 42
+```
+
+You may mix edge types, but support depends on implementation.
+You **must** use an edge identity for each multi-edge; meaning, each definition,
+including the first, must include a unique edge-identity marking.
+
+RGD also supports a convenient anonymous identity marking.
+The following is an equivalent description,
+
+```rgd
+{A,B,C}
+# edges
+A -> B: description = "..."
+C -> A &*: description = "..."
+C -> A &*: another_entry = 42
+```
 
 ### Legacy Edges
 For convenience and compatibility reasons, you can also use legacy edge notation

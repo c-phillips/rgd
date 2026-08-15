@@ -43,9 +43,9 @@ edge-doc-body = (edge-doc-header / legacy-edge-doc-header) newline
 unterminated-node-line = node-expression / ws comment / rws
 unterminated-edge-line = edge-expression / ws comment / rws
 
-graph-line = graph-expression ws [comment] newline / comment-line / blank-line
-node-line  = node-expression  ws [comment] newline / comment-line / blank-line
-edge-line  = edge-expression  ws [comment] newline / comment-line / blank-line
+graph-line = graph-expression [comment] newline / comment-line / blank-line
+node-line  = node-expression  [comment] newline / comment-line / blank-line
+edge-line  = edge-expression  [comment] newline / comment-line / blank-line
 
 graph-doc-header = ws section-marker ws %x67.72.61.70.68 ws ; # graph
 node-doc-header  = ws section-marker ws %x6e.6f.64.65.73 ws ; # nodes
@@ -153,8 +153,7 @@ metadata-sep = ws %x2C ws ; ,
 
 metadata-block = set-open 
 				 metadata-layout 
-                 [metadata-values] 
-                 metadata-layout 
+                 [metadata-values metadata-layout] 
                  set-close
                  
 metadata-values = keyval
@@ -196,8 +195,10 @@ escape-seq-char =/ %x55 8HEXDIG ; UXXXXXXXX            U+XXXXXXXX
 
 ;; Multiline Basic String
 
-ml-basic-string = ml-basic-string-delim [ newline ] ml-basic-body
+ml-basic-string = ml-basic-string-delim
+                  ml-basic-body
                   ml-basic-string-delim
+
 ml-basic-string-delim = 3quotation-mark
 ml-basic-body = *mlb-content *( mlb-quotes 1*mlb-content ) [ mlb-quotes ]
 
@@ -215,8 +216,10 @@ literal-char = %x09 / %x20-26 / %x28-7E / non-ascii
 
 ;; Multiline Literal String
 
-ml-literal-string = ml-literal-string-delim [ newline ] ml-literal-body
+ml-literal-string = ml-literal-string-delim
+                    ml-literal-body
                     ml-literal-string-delim
+
 ml-literal-string-delim = 3apostrophe
 ml-literal-body = *mll-content *( mll-quotes 1*mll-content ) [ mll-quotes ]
 
@@ -308,8 +311,7 @@ local-time = partial-time
 
 array = array-open 
         array-layout
-        [array-values]
-        array-layout
+        [array-values array-layout]
         array-close
 
 array-open =  %x5B ; [

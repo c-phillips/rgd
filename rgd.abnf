@@ -58,9 +58,10 @@ section-marker = %x23  ; #
 
 graph-expression = ws keyval ws
 
-node-expression = ws node ws
+node-expression =  ws node ws
 node-expression =/ ws node-set ws
 node-expression =/ ws legacy-node ws
+node-expression =/ ws node-reference ws
 
 edge-expression = ws edge ws
 edge-expression =/ ws hyper-edge ws
@@ -71,6 +72,11 @@ edge-expression =/ ws legacy-edge ws
 node = key [description]
 node-set = key-set [description]
 legacy-node = key legacy-description
+
+node-reference = reference-token reference-target [description]
+reference-target = key / key-set / wildcard-token
+reference-token = %x26 ; &
+wildcard-token = %x2A; *
 
 ;; Edge
 

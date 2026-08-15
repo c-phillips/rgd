@@ -133,10 +133,17 @@ val = metadata / pure-val / metadata-block
 
 ;; Key Sets
 
-key-set = set-open key-list set-close
+key-set = set-open
+          key-set-layout
+          key-list
+          key-set-layout
+          set-close
 
-key-list = key-list-item *(array-sep key-list-item)
-key-list-item = ws key ws
+key-list = key
+           *(key-set-layout array-sep key-set-layout key)
+           [key-set-layout array-sep]
+
+key-set-layout = *(wschar / [comment] newline)
 
 metadata = keyval *(metadata-sep keyval)
 metadata-sep = ws %x2C ws ; ,

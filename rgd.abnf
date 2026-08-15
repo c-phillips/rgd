@@ -74,9 +74,9 @@ legacy-node = key legacy-description
 
 ;; Edge
 
-edge = endpoint rws edgedir rws endpoint [ws edge-identity] [description]
-hyper-edge = key-set [ws edge-identity] [description]
-legacy-edge = key rws key [ws edge-identity] [legacy-description]
+edge = endpoint rws edgedir rws endpoint [rws edge-identity] [description]
+hyper-edge = key-set [rws edge-identity] [description]
+legacy-edge = key rws key [rws edge-identity] [legacy-description]
 endpoint = key / key-set
 
 edge-identity = anonymous-edge-identity / named-edge-identity

@@ -312,11 +312,10 @@ array = array-open
 array-open =  %x5B ; [
 array-close = %x5D ; ]
 
-array-values = val 
-               *(array-layout array-sep array-layout val)
+array-values = (pure-val / metadata-block)
+               *(array-layout array-sep array-layout (pure-val / metadata-block))
                [array-layout array-sep]
 
-array-item = ws val ws
 
 array-sep = %x2C ; ,
 

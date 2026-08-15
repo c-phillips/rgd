@@ -1,0 +1,19 @@
+// based on the example given by the authors of YARS-PG:
+// https://github.com/lszeremeta/yarspg/blob/main/yarspg/examples/2-real-example-schema.yarspg
+
+# nodes
+{Author01, Author02}: tag = "Author"
+Author01: fname = "John",  lname = "Smith"
+Author02: fname = "Alice", lname = "Brown"
+EI01: tag = ["Entry", "InProceedings"], title = "Serialization for...", numpages = 10, keyword: "Graph database"
+EA01: tag = ["Entry", "Article"], title="Property Graph...", numpages = 10, keyword = ["Query", "Graph"]
+Proc01: tag = "Proceedings", title = "BDAS", year=2018, month="May"
+Jour01: tag = "Journal", title="J. DB", year=2020, vol=30
+
+# edges
+EI01 -> Author01: type = "has_author", order = 1
+EI01 -> Author02: type = "has_author", order = 2
+EA01 -> Author02: type = "has_author", order = 1
+EA01 -> EI01: type = "cites"
+EI01 -> Proc01: type = "booktitle", pages = "111-121"
+EA01 -> Jour01: type = "published_in", pages = "222-232"

@@ -73,10 +73,15 @@ legacy-node = key legacy-description
 
 ;; Edge
 
-edge = endpoint rws edgedir rws endpoint [description]
-hyper-edge = key-set [description]
-legacy-edge = key rws key [legacy-description]
+edge = endpoint rws edgedir rws endpoint [ws edge-identity] [description]
+hyper-edge = key-set [ws edge-identity] [description]
+legacy-edge = key rws key [ws edge-identity] [legacy-description]
 endpoint = key / key-set
+
+edge-identity = anonymous-edge-identity / named-edge-identity
+anonymous-edge-identity = edge-identity-token %x2A
+named-edge-identity = edge-identity-token key
+edge-identity-token = %x26 ; &
 
 edgedir = left-right-dir / right-left-dir / bi-dir / un-dir
 left-right-dir = %x2D.3E  ; ->
@@ -114,7 +119,7 @@ comment-line = ws comment newline
 
 ;; Key-Value pairs
 
-keyval = key keyval-sep pure-val
+keyval = key keyval-sep (pure-val / metadata-block)
 
 key = quoted-key / unquoted-key
 unquoted-key = key-start *key-rest
@@ -124,7 +129,7 @@ quoted-key = basic-string / literal-string
 keyval-sep = ws %x3D ws ; =
 
 pure-val = string / boolean / array / date-time / float / integer
-val = metadata / pure-val
+val = metadata / pure-val / metadata-block
 
 ;; Key Sets
 
@@ -136,12 +141,25 @@ key-list-item = ws key ws
 metadata = keyval *(metadata-sep keyval)
 metadata-sep = ws %x2C ws ; ,
 
+metadata-block = set-open 
+				 metadata-layout 
+                 [metadata-values] 
+                 metadata-layout 
+                 set-close
+                 
+metadata-values = keyval
+				  *(metadata-layout block-sep metadata-layout keyval) 
+                  [metadata-layout block-sep]
+                  
+block-sep = %x2C ; ,
+metadata-layout = *(wschar / [comment] newline)
+
 set-open = %x7B  ; {
 set-close = %x7D ; }
 
 ;; String
 
-string = basic-string / literal-string
+string = basic-string / literal-string / ml-basic-string / ml-literal-string
 
 ;; Basic String
 
@@ -166,6 +184,17 @@ escape-seq-char =/ %x75 4HEXDIG ; uXXXX                U+XXXX
 escape-seq-char =/ %x78 2HEXDIG ; xHH                  U+00HH
 escape-seq-char =/ %x55 8HEXDIG ; UXXXXXXXX            U+XXXXXXXX
 
+;; Multiline Basic String
+
+ml-basic-string = ml-basic-string-delim [ newline ] ml-basic-body
+                  ml-basic-string-delim
+ml-basic-string-delim = 3quotation-mark
+ml-basic-body = *mlb-content *( mlb-quotes 1*mlb-content ) [ mlb-quotes ]
+
+mlb-content = basic-char / newline / mlb-escaped-nl
+mlb-quotes = 1*2quotation-mark
+mlb-escaped-nl = escape ws newline *( wschar / newline )
+
 ;; Literal String
 
 literal-string = apostrophe *literal-char apostrophe
@@ -173,6 +202,16 @@ literal-string = apostrophe *literal-char apostrophe
 apostrophe = %x27 ; ' apostrophe
 
 literal-char = %x09 / %x20-26 / %x28-7E / non-ascii
+
+;; Multiline Literal String
+
+ml-literal-string = ml-literal-string-delim [ newline ] ml-literal-body
+                    ml-literal-string-delim
+ml-literal-string-delim = 3apostrophe
+ml-literal-body = *mll-content *( mll-quotes 1*mll-content ) [ mll-quotes ]
+
+mll-content = literal-char / newline
+mll-quotes = 1*2apostrophe
 
 ;; Integer
 
@@ -257,19 +296,27 @@ local-time = partial-time
 
 ;; Array
 
-array = array-open ws (array-values / ws) ws array-close
+array = array-open 
+        array-layout
+        [array-values]
+        array-layout
+        array-close
 
 array-open =  %x5B ; [
 array-close = %x5D ; ]
 
-array-values = pure-val *(ws array-sep ws pure-val) [ws array-sep]
-array-item = ws pure-val ws
+array-values = val 
+               *(array-layout array-sep array-layout val)
+               [array-layout array-sep]
+
+array-item = ws val ws
 
 array-sep = %x2C ; ,
+
+array-layout = *(wschar / [comment] newline)
 
 ;; Built-in ABNF terms, reproduced here for clarity
 
 ALPHA = %x41-5A / %x61-7A ; A-Z / a-z
 DIGIT = %x30-39 ; 0-9
 HEXDIG = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
-
